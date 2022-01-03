@@ -26,16 +26,6 @@ with open('911_Calls_for_Service_(Last_30_Days).csv') as csvfile:
     for line in csv.DictReader(csvfile):
         police_report.append(line)
 
-
-#creating a list of dictionary
-#key = reader_list[0] #header
-#police_report=[] #empty list to append the dictionary
-
-#for i in range(1,len(reader_list)):
-#    value = reader_list[i]
-#    dictionary = {k:v for k,v in zip(key,value)} #forming key:value pair between list of header and list of value
-#    police_report.append(dictionary)
-
 #removing the dictionary which has missing data in the Zip, or Neighborhood columns
 police_report = filter(lambda police_report: police_report['zip_code'] != '0' or police_report['neighborhood'] != '', police_report)
 police_report = list(police_report)
