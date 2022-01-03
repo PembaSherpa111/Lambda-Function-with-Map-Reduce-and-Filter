@@ -7,12 +7,8 @@ def AVG(police_report,variable):
     total_time_report = filter(lambda report: report[variable] != '', police_report) 
     total_time_report  = list(total_time_report )
 
-    total_time = [] 
-    for i in range(0,len(total_time_report )):
-        total_time.append(float((total_time_report [i])[variable]))
-
-    sum_total_time = reduce(lambda total_time1, total_time2: total_time1 + total_time2, total_time) 
-    avg_total_time = sum_total_time/len(total_time)
+    total_time = reduce(lambda x, y: x + float(y[variable]), total_time_report, 0)
+    avg_total_time = total_time/len(total_time_report)
     return avg_total_time
 
 #function to calculate average by neighborhood
