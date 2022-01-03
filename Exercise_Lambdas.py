@@ -72,6 +72,7 @@ avg_dispatchtime_neighborhood = AVG_neighborhood(neighborhood, neighborhood_repo
 #find the average total time for each neighborhood 
 avg_totaltime_neighborhood = AVG_neighborhood(neighborhood, neighborhood_report,'totaltime')
 
+#writing list to json file.
 with open("neighborhood_report.json","w") as writer:
     json.dump(neighborhood_report,writer)
 
